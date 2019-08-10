@@ -62,6 +62,7 @@ const App = () => {
   return (
     <>
       <StatusBar barStyle="light-content" />
+
       <Routes />
     </>
   );

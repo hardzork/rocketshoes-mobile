@@ -5,7 +5,11 @@ export const Container = styled.View`
   flex: 1;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 70px;
+  background: #141419;
 `;
 
 export const Logo = styled.Image.attrs({
