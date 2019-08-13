@@ -1,16 +1,21 @@
 import styled from 'styled-components/native';
+
 import logo from '../../assets/logo.png';
 
-export const Container = styled.View`
-  flex: 1;
+export const Wrapper = styled.SafeAreaView`
+  flex: 0;
+  background: #141420;
   flex-direction: row;
-  justify-content: space-between;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 70px;
-  background: #141419;
 `;
+
+export const Container = styled.View`
+  flex-direction: row;
+  flex: 1;
+  justify-content: space-between;
+  padding: 20px;
+`;
+
+export const LogoContainer = styled.TouchableOpacity``;
 
 export const Logo = styled.Image.attrs({
   source: logo,

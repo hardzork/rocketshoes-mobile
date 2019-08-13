@@ -1,71 +1,19 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  ImageBackground,
-  StatusBar,
-} from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import { Provider } from 'react-redux';
+import './config/ReactotronConfig';
+import { StatusBar } from 'react-native';
+import store from './store';
 
 import Routes from './routes';
+import NavigationService from './services/navigation';
 
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.black,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
-
-const App = () => {
+export default function App() {
   return (
-    <>
+    <Provider store={store}>
       <StatusBar barStyle="light-content" />
-
-      <Routes />
-    </>
+      <Routes
+        ref={navigatorRef => NavigationService.setNavigator(navigatorRef)}
+      />
+    </Provider>
   );
-};
-
-export default App;
+}
